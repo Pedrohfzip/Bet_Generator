@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <py-script>
+        from random import *
+        from js import console
+        
+        cont = 0
+        
+        def criaAposta():
+            aposta = []
+            input_numero = Element('qtdNumeros')
+            divApostas = Element('apostas')
+            qtdNumero = int(input_numero.element.value)
+           
+            for cont in range(0,qtdNumero):
+                aposta.append(randint(1, 99))
+
+            
+                
+            for i in range(0, qtdNumero):
+                divApostas.element.innerText = aposta
+                
+            
+                
+    </py-script>
+<div class="main">
+        
+        <div id="titulo">
+            <h3>Gerador de apostas</h3>
+        </div>
+        
+        <div id="bodyContent">
+            <div id="content">
+                <h4>Quantos numeros sera apostado?</h4>
+                <div>
+                    <input type="number" name="" id="qtdNumeros">
+                    <button type="submit" py-onClick="criaAposta()"  id="botao">Enviar</button>
+                </div> 
+                <div>
+                    <h1 id="apostas"></h1>
+                </div>
+            </div>
+            
+        </div>
+        
+</div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
